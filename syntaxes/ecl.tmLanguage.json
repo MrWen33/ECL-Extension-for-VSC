@@ -30,7 +30,7 @@
 			},
 			{
 				"name": "support.type",
-				"match": "(var(?=[ |;])|sub\\b|(_f|_S)(?=[(]))"
+				"match": "(var(?=[ |;])|sub\\b|(_f|_S)(?=[(])|(_ff|_SS) )"
 			}
 		]
 			
