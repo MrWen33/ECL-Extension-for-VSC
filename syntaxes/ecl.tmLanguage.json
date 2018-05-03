@@ -1,0 +1,85 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ecl",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#ins"
+		},
+		{
+			"include":"#comments"
+		},
+		{
+			"include": "#constant_nums"
+		},
+		{
+			"include": "#subs"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+			{
+				"name": "keyword.control.ecl",
+				"match": "\\b(if|while|for|return|goto| @ |unless)\\b"
+			},
+			{
+				"name": "support.type",
+				"match": "(var(?=[ |;])|sub\\b|(_f|_S)(?=[(]))"
+			}
+		]
+			
+		},
+		"strings": {
+			"name": "string.quoted.double.ecl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ecl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"ins": {
+			"patterns": [
+				{
+					"name": "support.function.ecl",
+					"match": "ins_\\d+"
+				}
+			]
+		},
+		"comments":{
+			"patterns":[
+				{
+					"name":"comment.ecl",
+					"match":"/\\*.*\\*/"
+				}
+			]
+		},
+		"constant_nums":{
+			"patterns":[
+				{
+					"name":"constant.numeric.ecl",
+					"match":"(?<=[ \\[,;(])-*\\d*\\.{0,1}\\d+f{0,1}(?=[ \\],;)])"
+				}
+			]
+		},
+		"subs":{
+			"patterns":[
+				
+				{
+					"name":"entity.name.function.ecl",
+					"match":"[A-Za-z_]\\w*(?=[(])"
+				}
+
+			]
+		}
+	},
+	"scopeName": "txt.ecl"
+}

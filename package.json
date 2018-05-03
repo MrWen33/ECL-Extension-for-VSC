@@ -1,0 +1,26 @@
+{
+    "name": "TouHou",
+    "displayName": "ecl",
+    "description": "THscript",
+    "version": "0.0.1",
+    "publisher": "SPC",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ecl",
+            "aliases": ["ecl", "ecl"],
+            "extensions": [".txt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ecl",
+            "scopeName": "txt.ecl",
+            "path": "./syntaxes/ecl.tmLanguage.json"
+        }]
+    }
+}
